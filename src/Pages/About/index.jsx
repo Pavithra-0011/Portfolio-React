@@ -1,0 +1,130 @@
+import {React, useEffect, useState} from 'react'
+import NavigationBar from '../Navigationbar'
+import SchoolIcon from '@mui/icons-material/School';
+import PlaceIcon from '@mui/icons-material/Place';
+import LaptopIcon from '@mui/icons-material/Laptop';
+import TechnicalComponent from '../../components/Tech-component'
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import HtmlIcon from '@mui/icons-material/Html';
+import './style.scss'
+
+function About() {
+  const [text, setText] = useState('')
+  useEffect(() =>
+  {
+  setTimeout(()=> {
+    setText('Scroll Down!')
+  },1000)
+  },[])
+    
+  return (
+    <>
+       <div className='Container static mt-0'>
+         <div className='Part1 m-5'>
+           <NavigationBar />
+         </div>
+         <div className='text-common w-1/2 ml-10 mt-56'>
+            {/* <h1 className='text-white text-6xl'>Hello</h1>  */}
+            <h1 className='text-white text-6xl'>A 'BE Graduate' from Vels University 
+            <SchoolIcon style={{ fontSize: 70, margin:10 }}/>
+            </h1>
+            <div className='w-2/3'>
+            <p className='text-white text-2xl mt-0 text-center'>Computer Science and Engineering</p>
+            <p className='fade-in-text text-gray-100 font-semibold text-xl mt-6 text-center'>{text}</p>
+            </div>
+         </div>
+       </div>
+         <div className='Container-2 m-auto w-3/4  mt-40 py-4 h-80 text-white'>
+           <h2 className='text-center text-4xl'>Technical Skills</h2>
+           <div className='flex flex-row justify-between w-90 px-3 py-2 mx-5 mt-20 font-semibold text-center'>
+            <div className='flex flex-col w-fit px-2'>
+            <img src='src/assets/html.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
+             <h4 className='Tech-text mt-3'>HTML</h4>
+            </div>
+            <div className='flex flex-col'>
+            <img src='src/assets/css-3.png' alt='html-img' className='m-auto' height='40px' width='40px'/>
+             <h4 className='Tech-text mt-3'>CSS</h4>
+            </div>
+            <div className='flex flex-col'>
+            <img src='src/assets/java-script.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
+             <h4 className='Tech-text mt-3'>JS</h4>
+            </div>
+            <div className='flex flex-col'>
+            <img src='src/assets/bootstrap.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
+             <h4 className='Tech-text mt-3'>BS</h4>
+            </div>
+            <div className='flex flex-col'>
+            <img src='src/assets/wind.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
+             <h4 className='Tech-text mt-3'>TW</h4>
+            </div>
+            <div className='flex flex-col'>
+            <img src='src/assets/atom.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
+             <h4 className='Tech-text mt-3'>REACT</h4>
+            </div>
+            <div className='flex flex-col w-fit px-2'>
+             <img src='src/assets/angularjs.svg' className='m-auto' alt='html-img' height='40px' width='40px'/>
+             <h4 className='Tech-text mt-3'>ANGULAR</h4>
+            </div>
+           </div>
+         </div>
+
+         <div className='Container-3 m-auto w-3/4 mt-44 py-10 px-10 text-4xl  text-center h-80 text-white'>
+           <h1>Hands on Experience on Real Time Projects</h1>
+           <div className='flex mt-14 justify-evenly'>
+           <div className='flex flex-col'>
+            <img src='src/assets/haircut.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
+             <h4 className='mt-3 text-xl'>TONI INTERNATIONAL</h4>
+             <p className='text-sm'>(A React based project)</p>
+           </div>
+           <div className='flex flex-col'>
+            <img src='src/assets/music.png' className='m-auto' alt='html-img' height='80px' width='80px'/>
+             <h4 className='text-xl mt-3'>ICON</h4>
+             <p className='text-sm'>(An Angular based project)</p>
+            </div>
+           </div>
+         </div>
+
+         <div className='Container-4 m-auto w-3/4 mt-44 py-10 px-10 text-4xl h-fit text-white'>           
+             <h1 className='text-center'>Certifications</h1>
+          <div className='flex justify-between w-10/12'>
+          <div>
+           <img src='src/assets/document.png' alt='Contact' height="180px" width="150px"/>
+           </div>
+           <div className='mt-10 leading-5'>
+             <p className='text-white text-2xl'>1.Data Science for Engineers (NPTEL - IIT Madras).</p>
+             <p className='text-white text-2xl'>2.Database Management (NPTEL - IIT Khagrapur).</p>
+             <p className='text-white text-2xl'>3.Frontend web development.</p>
+           </div>
+           {/* <div>
+           <img src='src/assets/document.png' alt='Contact' height="180px" width="150px"/>
+           </div> */}
+           </div>
+         </div>
+         <div className='Container-4 m-auto w-3/4 mt-44 py-10 px-10 mb-10 text-2xl h-fit text-white'>
+            {/* <div className='text-white text-center mb-5'>
+              <PlaceIcon fontSize="large" style={{marginRight :10 }}/>
+              <p className='text-white text-1xl mt-0 text-center'>--------- Lives in Chennai ---------</p>
+            </div> */}
+            <div className='text-white text-center mb-5'>
+              <p>Get in Touch via</p>
+            </div>
+            <div className='Contact'>
+             <div className='flex justify-evenly text-white mt-10'>
+              <a href='https://www.linkedin.com/in/pavithra-s-a67ba3247' target='blank'>
+               <img src='src/assets/linkedin.png' alt='html-img' height='30px' width='30px'/>
+              </a>
+              <a href='https://www.instagram.com/__miss__virgo?igsh=MWJteHB6aWtyeWRwNA==' target='blank'>
+               <img src='src/assets/instagram.png' alt='html-img' height='30px' width='30px'/>
+              </a>
+              <a href='https://www.facebook.com/profile.php?id=100017325847000' target='blank'>
+               <img src='src/assets/facebook.png' alt='html-img' height='30px' width='30px'/>
+              </a>
+               <img src='src/assets/gmail.png' alt='html-img' height='30px' width='30px'/>
+             </div>
+            </div>
+         </div>
+    </>
+  )
+}
+
+export default About
