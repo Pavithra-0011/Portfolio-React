@@ -6,11 +6,11 @@ import LaptopIcon from '@mui/icons-material/Laptop';
 import TechnicalComponent from '../../components/Tech-component'
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import HtmlIcon from '@mui/icons-material/Html';
-import { motion, useInView, useAnimation, useScroll} from "framer-motion";
+import { motion, useInView, useAnimation, useScroll,useMotionValue, useTransform,animate} from "framer-motion";
 import './style.scss'
 
 function About() {
-  const [text, setText] = useState('')
+  const [Value, setValue] = useState('')
   const ref = useRef(null);
   const isView = useInView(ref, {once : false});
   const animation = useAnimation();
@@ -18,15 +18,13 @@ function About() {
 
   useEffect(() =>
   {
-    setText("Scroll Down!")
-  },[2000])
-  useEffect(() =>
-  {
+ 
    if(isView)
     {
       console.log("true")
       animation.start("visible")
     }
+  
   },[isView]);
   
   return (
@@ -54,7 +52,7 @@ function About() {
             </h1>
             <div className='w-2/3'>
             <p className='text-white text-2xl mt-0 text-center'>Computer Science and Engineering</p>
-            <p className='fade-in-text text-gray-100 font-semibold text-xl mt-6 text-center'>{text}</p>
+            <p className='fade-in-text text-gray-100 font-semibold text-xl mt-6 text-center'>Scroll Down!</p>
             </div>
          </motion.div>
        </div>
@@ -83,18 +81,19 @@ function About() {
             <div className='flex flex-col w-fit px-2'>
             <img src='src/assets/html.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
              <h4 className='Tech-text mt-3'>HTML</h4>
+             
             </div>
             <div className='flex flex-col'>
             <img src='src/assets/css-3.png' alt='html-img' className='m-auto' height='40px' width='40px'/>
-             <h4 className='Tech-text mt-3'>CSS</h4>
+             <h4 className='Tech-text mt-3'>CSS</h4>       
             </div>
             <div className='flex flex-col'>
             <img src='src/assets/java-script.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
-             <h4 className='Tech-text mt-3'>JS</h4>
+             <h4 className='Tech-text mt-3'>JS</h4>             
             </div>
             <div className='flex flex-col'>
             <img src='src/assets/bootstrap.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
-             <h4 className='Tech-text mt-3'>BS</h4>
+             <h4 className='Tech-text mt-3'>BS</h4>             
             </div>
             <div className='flex flex-col'>
             <img src='src/assets/wind.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
@@ -103,6 +102,7 @@ function About() {
             <div className='flex flex-col'>
             <img src='src/assets/atom.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
              <h4 className='Tech-text mt-3'>REACT</h4>
+             
             </div>
             <div className='flex flex-col w-fit px-2'>
              <img src='src/assets/angularjs.svg' className='m-auto' alt='html-img' height='40px' width='40px'/>

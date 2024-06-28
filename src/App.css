@@ -40,3 +40,27 @@ body
         font-style: normal;
         line-height:2;
 }
+
+@media (max-width: 800px)
+{
+  .Main-content
+  {
+    display: none;
+  }
+  .Error-Block
+  {
+  display: block;
+  }
+}
+
+@media (min-width: 881px)
+{
+  .Main-content
+  {
+    display: block;
+  }
+  .Error-Block
+  {
+  display: none;
+  }
+}

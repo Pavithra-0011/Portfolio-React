@@ -4,9 +4,7 @@ import InputComponent from '../../components/Input'
 import Lottie from 'lottie-react'
 import Communicate from  '../../../Communicate.json'
 import { motion } from "framer-motion";
-import animation from '../../assets/Animation.json'
 import './style.scss'
-import { duration } from '@mui/material'
 
 function Contact() {
   return (
@@ -31,8 +29,23 @@ function Contact() {
             {/* <div className='cont text-white text-xl font-semibold ml-14 mt-44'>GET IN TOUCH</div> */}
             <div className='ml-14 text-3xl font-semibold mt-44 text-white'>
              <div className='texts-in'>
-            < img src='src/assets/chat.png' alt='Contact' height="70px" width="70px"/>
-              <p className='mt-4'>Drop a Mail to:</p>
+             {/* < img src='src/assets/chat.png' alt='Contact' height="70px" width="70px"/> */}
+             <motion.div
+                className="box"
+                animate={{
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, 180, 180, 0],
+                borderRadius: ["0%", "0%", "50%", "50%", "0%"]
+                }}
+                transition={{
+                duration: 2,
+                ease: "easeInOut",
+                times: [0, 0.2, 0.5, 0.8, 1],
+                repeat: Infinity,
+                repeatDelay: 1
+                }}
+                />
+              <p className='mt-10'>Drop a Mail to:</p>
               <p className='mt-3'>pavithrapavioffc21@gmail.com</p>
             </div>
              </div>
