@@ -7,3 +7,15 @@
 {
     text-decoration: underline;
 }
+.lottie-bg
+{
+    position: absolute;
+    z-index: 1;
+    width: 500px;
+    height: 500px;
+    .texts-in
+    {
+        position: relative;
+        z-index: 1;
+    }
+}

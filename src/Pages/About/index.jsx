@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react'
+import {React, useEffect, useState, useRef} from 'react'
 import NavigationBar from '../Navigationbar'
 import SchoolIcon from '@mui/icons-material/School';
 import PlaceIcon from '@mui/icons-material/Place';
@@ -6,24 +6,48 @@ import LaptopIcon from '@mui/icons-material/Laptop';
 import TechnicalComponent from '../../components/Tech-component'
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import HtmlIcon from '@mui/icons-material/Html';
+import { motion, useInView, useAnimation, useScroll} from "framer-motion";
 import './style.scss'
 
 function About() {
   const [text, setText] = useState('')
+  const ref = useRef(null);
+  const isView = useInView(ref, {once : false});
+  const animation = useAnimation();
+  const { scrollYProgress } = useScroll();
+
   useEffect(() =>
   {
-  setTimeout(()=> {
-    setText('Scroll Down!')
-  },1000)
-  },[])
-    
+    setText("Scroll Down!")
+  },[2000])
+  useEffect(() =>
+  {
+   if(isView)
+    {
+      console.log("true")
+      animation.start("visible")
+    }
+  },[isView]);
+  
   return (
     <>
        <div className='Container static mt-0'>
          <div className='Part1 m-5'>
-           <NavigationBar />
+           <NavigationBar className='fixed' />
+           <motion.div className='progress-bar'
+             style={{ scaleX: scrollYProgress }}
+           >
+           </motion.div>
          </div>
-         <div className='text-common w-1/2 ml-10 mt-56'>
+         <motion.div 
+         variants={{
+          hidden : {opacity: 0, y: -30},
+          visible : {opacity: 1, y: 0}
+        }}
+        initial = "hidden" 
+        animate = {"visible"}
+        transition={{duration: 0.60, delay:0.25}}
+         className='text-common w-1/2 ml-10 mt-48'>
             {/* <h1 className='text-white text-6xl'>Hello</h1>  */}
             <h1 className='text-white text-6xl'>A 'BE Graduate' from Vels University 
             <SchoolIcon style={{ fontSize: 70, margin:10 }}/>
@@ -32,9 +56,28 @@ function About() {
             <p className='text-white text-2xl mt-0 text-center'>Computer Science and Engineering</p>
             <p className='fade-in-text text-gray-100 font-semibold text-xl mt-6 text-center'>{text}</p>
             </div>
-         </div>
+         </motion.div>
        </div>
-         <div className='Container-2 m-auto w-3/4  mt-40 py-4 h-80 text-white'>
+       
+       <motion.div ref={ref}
+        variants={{
+          hidden : {opacity: 0, y: 75},
+          visible : {opacity: 1, y: 0}
+        }}
+        initial = "hidden" 
+        animate = {animation}
+        transition={{duration: 0.60, delay:0.25}}
+       >
+         <motion.div 
+          ref={ref}
+         variants={{
+          hidden : {opacity: 0, y: 75},
+          visible : {opacity: 1, y: 0}
+        }}
+        initial = "hidden" 
+        animate = {animation}
+        transition={{duration: 0.60, delay:0.25}}
+         className='Container-2 m-auto w-3/4  mt-40 py-4 h-80 text-white'>
            <h2 className='text-center text-4xl'>Technical Skills</h2>
            <div className='flex flex-row justify-between w-90 px-3 py-2 mx-5 mt-20 font-semibold text-center'>
             <div className='flex flex-col w-fit px-2'>
@@ -66,9 +109,18 @@ function About() {
              <h4 className='Tech-text mt-3'>ANGULAR</h4>
             </div>
            </div>
-         </div>
+         </motion.div>
 
-         <div className='Container-3 m-auto w-3/4 mt-44 py-10 px-10 text-4xl  text-center h-80 text-white'>
+         <motion.div 
+          ref={ref}
+         variants={{
+          hidden : {opacity: 0, y: 75},
+          visible : {opacity: 1, y: 0}
+        }}
+        initial = "hidden" 
+        animate = {animation}
+        transition={{duration: 0.60, delay:0.25}}
+         className='Container-3 m-auto w-3/4 mt-44 py-10 px-10 text-4xl  text-center h-80 text-white'>
            <h1>Hands on Experience on Real Time Projects</h1>
            <div className='flex mt-14 justify-evenly'>
            <div className='flex flex-col'>
@@ -82,9 +134,18 @@ function About() {
              <p className='text-sm'>(An Angular based project)</p>
             </div>
            </div>
-         </div>
+         </motion.div>
 
-         <div className='Container-4 m-auto w-3/4 mt-44 py-10 px-10 text-4xl h-fit text-white'>           
+         <motion.div 
+          ref={ref}
+         variants={{
+          hidden : {opacity: 0, y: 75},
+          visible : {opacity: 1, y: 0}
+        }}
+        initial = "hidden" 
+        animate = {animation}
+        transition={{duration: 0.60, delay:0.25}}
+         className='Container-4 m-auto w-3/4 mt-44 py-10 px-10 text-4xl h-fit text-white'>           
              <h1 className='text-center'>Certifications</h1>
           <div className='flex justify-between w-10/12'>
           <div>
@@ -99,8 +160,18 @@ function About() {
            <img src='src/assets/document.png' alt='Contact' height="180px" width="150px"/>
            </div> */}
            </div>
-         </div>
-         <div className='Container-4 m-auto w-3/4 mt-44 py-10 px-10 mb-10 text-2xl h-fit text-white'>
+         </motion.div>
+         
+         <motion.div 
+          ref={ref}
+         variants={{
+          hidden : {opacity: 0, y: 75},
+          visible : {opacity: 1, y: 0}
+        }}
+        initial = "hidden" 
+        animate = {animation}
+        transition={{duration: 0.60, delay:0.25}}
+          className='Container-4 m-auto w-3/4 mt-44 py-10 px-10 mb-10 text-2xl h-fit text-white'>
             {/* <div className='text-white text-center mb-5'>
               <PlaceIcon fontSize="large" style={{marginRight :10 }}/>
               <p className='text-white text-1xl mt-0 text-center'>--------- Lives in Chennai ---------</p>
@@ -122,7 +193,8 @@ function About() {
                <img src='src/assets/gmail.png' alt='html-img' height='30px' width='30px'/>
              </div>
             </div>
-         </div>
+         </motion.div>
+         </motion.div>
     </>
   )
 }
