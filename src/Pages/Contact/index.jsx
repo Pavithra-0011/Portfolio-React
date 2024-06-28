@@ -55,7 +55,7 @@ function Contact() {
               transition={{duration : 0.3}}
               className=''>
               <a href='https://www.linkedin.com/in/pavithra-s-a67ba3247' target='blank'>
-               <img src='src/assets/linkedin.png' alt='html-img' height='30px' width='30px'/>
+               <img src='public/assets/linkedin.png' alt='html-img' height='30px' width='30px'/>
               </a>
               {/* <p className='text-white text-sm'>Pavithra S</p> */}
               </motion.div>
@@ -64,7 +64,7 @@ function Contact() {
               transition={{duration : 0.3}}
               className=''>
               <a href='https://www.instagram.com/__miss__virgo?igsh=MWJteHB6aWtyeWRwNA==' target='blank'>
-               <img src='src/assets/instagram.png' alt='html-img' height='30px' width='30px'/>
+               <img src='public/assets/instagram.png' alt='html-img' height='30px' width='30px'/>
               </a>
               </motion.div>
               <motion.div 
@@ -72,7 +72,7 @@ function Contact() {
               transition={{duration : 0.3}}
               className=''>
               <a href='https://www.facebook.com/profile.php?id=100017325847000' target='blank'>
-               <img src='src/assets/facebook.png' alt='html-img' height='30px' width='30px'/>
+               <img src='public/assets/facebook.png' alt='html-img' height='30px' width='30px'/>
               </a>
               </motion.div>
               <motion.div 
@@ -80,7 +80,7 @@ function Contact() {
               transition={{duration : 0.3}}
               className=''>
                 <a href='https://g.co/kgs/x2xUaQ1' target='blank'>
-                 <img src='src/assets/gmail.png' alt='html-img' height='30px' width='30px'/>
+                 <img src='public/assets/gmail.png' alt='html-img' height='30px' width='30px'/>
                 </a>
               </motion.div>
              </div>
