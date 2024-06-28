@@ -27,16 +27,19 @@ function NavigationBar() {
         </div>
             <nav>
               <motion.li 
-              whileTap={{ scale: 2 }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
               onClick={handleHomePageClick}>HOME</motion.li>
               <motion.li 
-               whileTap={{ scale: 2 }}
-               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               onClick={handleAboutClick}>ABOUT</motion.li>
               <motion.li 
-               whileTap={{ scale: 2 }}
-               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               onClick={handleContactClick}>CONTACT</motion.li>
             </nav>
       </div>

@@ -9,11 +9,17 @@ function App() {
 
   return (
     <>
-       <Routes>
+    <div className='Main-content'>
+      <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/contact' element={<Contact/>} />
       <Route path='/about' element={<About/>} />
        </Routes>
+    </div>
+
+      <div className='Error-Block m-60'>
+        <h3 className=' text-white text-2xl font-bold'>Cannot be Viewed in Smaller Screens!</h3>
+      </div>
     </>
   )
 }
