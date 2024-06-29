@@ -49,7 +49,17 @@ body
   }
   .Error-Block
   {
-  display: block;
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    top:50%;
+    bottom:50%;
+    left:50%;
+    right:50%;
   }
 }
 
@@ -62,5 +72,47 @@ body
   .Error-Block
   {
   display: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px)
+{
+  .Main-content
+  {
+    display: none;
+  }
+  .Error-Block
+  {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:50%;
+    bottom:50%;
+    left:50%;
+    right:50%;
+    margin-top: 200px;
+  }
+}
+@media (max-width: 576px)
+{
+  .Main-content
+  {
+    display: none;
+  }
+  .Error-Block
+  {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:50%;
+  bottom:50%;
+  left:50%;
+  right:50%;
+  margin-top: 200px;
   }
 }
