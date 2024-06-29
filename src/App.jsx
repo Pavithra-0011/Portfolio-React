@@ -17,8 +17,8 @@ function App() {
        </Routes>
     </div>
 
-      <div className='Error-Block m-60'>
-        <h3 className=' text-white text-2xl font-bold'>Cannot be Viewed in Smaller Screens!</h3>
+      <div className='Error-Block'>
+        <h3 className=' text-white'>Cannot be Viewed in Smaller Screens!</h3>
       </div>
     </>
   )
