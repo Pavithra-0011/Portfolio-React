@@ -79,7 +79,7 @@ function About() {
            <h2 className='text-center text-4xl'>Technical Skills</h2>
            <div className='flex flex-row justify-between w-90 px-3 py-2 mx-5 mt-20 font-semibold text-center'>
             <div className='flex flex-col w-fit px-2'>
-            <img src='public/assets/html.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
+            <img src='public/html.png' className='m-auto' alt='html-img' height='40px' width='40px'/>
              <h4 className='Tech-text mt-3'>HTML</h4>
              
             </div>
