@@ -1,8 +1,10 @@
 import React from 'react'
 import NavigationBar from '../Navigationbar'
 import InputComponent from '../../components/Input'
-import Lottie from 'lottie-react'
-import Communicate from  '../../../Communicate.json'
+import linkedin from '../../../public/assets/linkedin.png'
+import instagram from '../../../public/assets/instagram.png'
+import gmail from '../../../public/assets/gmail.png'
+import facebook from '../../../public/assets/facebook.png'
 import { motion } from "framer-motion";
 import './style.scss'
 
@@ -55,7 +57,7 @@ function Contact() {
               transition={{duration : 0.3}}
               className=''>
               <a href='https://www.linkedin.com/in/pavithra-s-a67ba3247' target='blank'>
-               <img src='public/assets/linkedin.png' alt='html-img' height='30px' width='30px'/>
+               <img src={linkedin} alt='html-img' height='30px' width='30px'/>
               </a>
               {/* <p className='text-white text-sm'>Pavithra S</p> */}
               </motion.div>
@@ -64,7 +66,7 @@ function Contact() {
               transition={{duration : 0.3}}
               className=''>
               <a href='https://www.instagram.com/__miss__virgo?igsh=MWJteHB6aWtyeWRwNA==' target='blank'>
-               <img src='public/assets/instagram.png' alt='html-img' height='30px' width='30px'/>
+               <img src={instagram} alt='html-img' height='30px' width='30px'/>
               </a>
               </motion.div>
               <motion.div 
@@ -72,7 +74,7 @@ function Contact() {
               transition={{duration : 0.3}}
               className=''>
               <a href='https://www.facebook.com/profile.php?id=100017325847000' target='blank'>
-               <img src='public/assets/facebook.png' alt='html-img' height='30px' width='30px'/>
+               <img src={facebook} alt='html-img' height='30px' width='30px'/>
               </a>
               </motion.div>
               <motion.div 
@@ -80,7 +82,7 @@ function Contact() {
               transition={{duration : 0.3}}
               className=''>
                 <a href='https://g.co/kgs/x2xUaQ1' target='blank'>
-                 <img src='public/assets/gmail.png' alt='html-img' height='30px' width='30px'/>
+                 <img src={gmail} alt='html-img' height='30px' width='30px'/>
                 </a>
               </motion.div>
              </div>
