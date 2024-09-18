@@ -4,7 +4,7 @@ import ButtonComponent from '../../components/Button';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import DownloadIcon from '@mui/icons-material/Download';
 import NavigationBar from '../Navigationbar'
-import Resume from '../../../public/assets/PAVITHRA-SIVAKUMAR-RESUME.pdf'
+import Resume from '../../../public/assets/PAVITHRA-SIVAKUMAR-CV.pdf'
 import InputComponent from '../../components/Input/index'
 import { motion } from "framer-motion";
 import About from '../About/index'
