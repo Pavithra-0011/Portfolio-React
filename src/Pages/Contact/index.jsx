@@ -1,94 +1,113 @@
-import React from 'react'
-import NavigationBar from '../Navigationbar'
+import {useState} from 'react'
+import { Formik, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { useDispatch } from 'react-redux'
+import Postdata from '../../Redux/Action/Action.jsx'
 import InputComponent from '../../components/Input'
 import linkedin from '../../../public/assets/linkedin.png'
 import instagram from '../../../public/assets/instagram.png'
 import gmail from '../../../public/assets/gmail.png'
 import facebook from '../../../public/assets/facebook.png'
+import TextArea from '../../components/TextArea/index'
+import ButtonComponent from '../../components/Button'
 import { motion } from "framer-motion";
 import './style.scss'
 
 function Contact() {
+ const dispatch = useDispatch()
+ const [details, setDetails] = useState({
+  Name : '',
+  Email : '',
+  Message : ''
+ })
+  
+ const validationSchema = Yup.object({
+  Name: Yup.string().required('Name is required'),
+  Email: Yup.string().email('Invalid email').required('Email is required'),
+  Message: Yup.string().required('Message is required')
+});
+
+ const HandleChange = (e)=>
+ {
+    setDetails({
+      ...details,
+      [e.target.name] : [e.target.value]
+    })
+    console.log(e.target.value)
+ }
+
+ const HandleSendMessage = ()=>
+ {
+    dispatch(Postdata(details))
+    .then(() => {
+      setDetails({
+        Name: '',
+        Email: '',
+        Message: ''
+      });
+      alert('Your Message Has been Sent!')
+    })
+    .catch(error => {
+      console.error("Submission error:", error);
+    });
+ }
   return (
     <>
-      <div className='Container static mt-0'>
-         <div className='Part1 m-5'>
-           <NavigationBar />
-         </div>
-            {/* <div className='text-white text-center mb-5'>
-              <PlaceIcon fontSize="large" style={{marginRight :10 }}/>
-              <p className='text-white text-1xl mt-0 text-center'>--------- Lives in Chennai ---------</p>
-            </div> */}
-            <motion.div 
-            variants={{
-              hidden : {opacity: 0, y: -30},
-              visible : {opacity: 1, y: 0}
+      <div className='Container-1 static mt-0 h-96 w-5/6 mx-auto p-4 flex'>
+       <div className='w-72 h-full text-pink-700 font-black text-4xl text-start flex flex-col justify-center mr-10'>Contact Me!
+         <div className='text-white font-semibold text-lg mt-7'>Feel free to get in touch, will get back to you shortly !!! </div>
+         <div className='text-pink-400 font-semibold text-lg mt-2'>drop a mail at <br/> pavithrapavioffc21@gmail.com</div>
+       </div>
+       <div className='w-2/5 h-full ml-10 mr-16'>
+       <Formik
+            initialValues={details}
+            validationSchema={validationSchema}
+            onSubmit={(details) => {
+              HandleSendMessage(details);
             }}
-            initial = "hidden" 
-            animate = "visible"
-            transition={{duration: 0.60, delay:0.25}}
-            className='wrap'>
-            {/* <div className='cont text-white text-xl font-semibold ml-14 mt-44'>GET IN TOUCH</div> */}
-            <div className='ml-14 text-3xl font-semibold mt-44 text-white'>
-             <div className='texts-in'>
-             {/* < img src='src/assets/chat.png' alt='Contact' height="70px" width="70px"/> */}
-             <motion.div
-                className="box"
-                animate={{
-                scale: [1, 2, 2, 1, 1],
-                rotate: [0, 0, 180, 180, 0],
-                borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-                }}
-                transition={{
-                duration: 2,
-                ease: "easeInOut",
-                times: [0, 0.2, 0.5, 0.8, 1],
-                repeat: Infinity,
-                repeatDelay: 1
-                }}
-                />
-              <p className='mt-10'>Drop a Mail to:</p>
-              <p className='mt-3'>pavithrapavioffc21@gmail.com</p>
-            </div>
-             </div>
-             <div className='flex justify-between align-middle mt-10 ml-14 w-60 h-fit'>
-              <motion.div 
-              whileHover={{scale : [null, 2, 1.4]}}
-              transition={{duration : 0.3}}
-              className=''>
-              <a href='https://www.linkedin.com/in/pavithra-s-a67ba3247' target='blank'>
-               <img src={linkedin} alt='html-img' height='30px' width='30px'/>
-              </a>
-              {/* <p className='text-white text-sm'>Pavithra S</p> */}
-              </motion.div>
-              <motion.div 
-              whileHover={{scale : [null, 2, 1.4]}}
-              transition={{duration : 0.3}}
-              className=''>
-              <a href='https://www.instagram.com/__miss__virgo?igsh=MWJteHB6aWtyeWRwNA==' target='blank'>
-               <img src={instagram} alt='html-img' height='30px' width='30px'/>
-              </a>
-              </motion.div>
-              <motion.div 
-              whileHover={{scale : [null, 2, 1.4]}}
-              transition={{duration : 0.3}}
-              className=''>
-              <a href='https://www.facebook.com/profile.php?id=100017325847000' target='blank'>
-               <img src={facebook} alt='html-img' height='30px' width='30px'/>
-              </a>
-              </motion.div>
-              <motion.div 
-              whileHover={{scale : [null, 2, 1.4]}}
-              transition={{duration : 0.3}}
-              className=''>
-                <a href='https://g.co/kgs/x2xUaQ1' target='blank'>
-                 <img src={gmail} alt='html-img' height='30px' width='30px'/>
-                </a>
-              </motion.div>
-             </div>
-             {/* <Lottie animationData={Communicate} loop height={40} width={40}/> */}
-             </motion.div>
-            </div>
+          >
+{({ values, handleChange, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+          <InputComponent
+          placeholder={"Name"} 
+          name = {"Name"}
+          value = {details.Name}
+          onChange={HandleChange}
+          className='mb-3'
+          />
+          <ErrorMessage name="Name" component="div" className="text-red-500" />
+          <InputComponent
+          placeholder={"Mail"} 
+          type={"email"}
+          name={"Email"}
+          value = {details.Email}
+          onChange={HandleChange}
+          className='mb-3'
+          />
+          <ErrorMessage name="Email" component="div" className="text-red-500" />
+          <TextArea
+          placeholder={"Your Message"} 
+          type="text"
+          name = {"Message"}
+          value = {details.Message}
+          onChange={HandleChange}
+          className="h-44 flex justify-start items-start"
+          />
+           <ErrorMessage name="Message" component="div" className="text-red-500" />
+          <ButtonComponent 
+          className='Mui-button'
+          ButtonName="Send" 
+          onClick={(details) => HandleSendMessage(details) }
+          />
+           </Form>
+            )}
+          </Formik>
+          </div>
+       <div className='w-72 h-full text-pink-700 font-black text-2xl text-start flex flex-col justify-center'>Drop your queries!
+         <div className='text-white font-semibold text-lg mt-2'>or Provide a suggestion</div>
+         {/* <div className='text-pink-400 font-semibold text-lg mt-2'>drop a mail at <br/> pavithrapavioffc21@gmail.com</div> */}
+       </div>
+       </div>
    </>
   )
 }
