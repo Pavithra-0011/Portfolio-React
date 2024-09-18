@@ -11,7 +11,7 @@ body
   background-color: black;
 }
 
-.Common-Button
+/* .Common-Button
 {
   height:50px;
   margin: 15px;
@@ -31,7 +31,7 @@ body
   height: 50px;
   color: white !important;
   border: 1px solid white;
-}
+} */
 .text-common
 {
   font-family: "Mulish", sans-serif;

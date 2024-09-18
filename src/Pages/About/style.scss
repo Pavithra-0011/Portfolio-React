@@ -5,7 +5,7 @@ body::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
-.Container
+.Container1
 {
     .fade-in-text {
         /* Animation for fading in */
@@ -32,9 +32,8 @@ body::-webkit-scrollbar {
     font-style: normal;
     line-height:2;
     border-radius: 15px;
-    border: 0px solid white;
-    box-shadow: 5px 10px 18px #888888;
-
+    border: .5px solid white;
+    // box-shadow: 5px 10px 18px #888888;
     .Tech-text
     {
         font-size: 25px;
@@ -43,6 +42,113 @@ body::-webkit-scrollbar {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
     }
 }
+.Services
+{
+    @extend .Container-2;
+    border: none !important;
+}
+.skills
+{
+    @extend .Services;
+    // border: 1px solid white !important;
+    .card1
+    {
+        background-color: #0a0a0a;
+        box-shadow: 0 0 10px rgb(20, 20, 20), 0 0 20px rgb(8, 8, 8), 0 0 30px rgb(14, 13, 13), 0 0 20px rgb(15, 15, 15), 0 0 20px rgb(19, 18, 18);
+    }
+    .card2 
+    {
+        background-color: #0a0a0a;
+        box-shadow: 0 0 10px rgb(20, 20, 20), 0 0 20px rgb(8, 8, 8), 0 0 30px rgb(14, 13, 13), 0 0 20px rgb(15, 15, 15), 0 0 20px rgb(19, 18, 18);
+        overflow: hidden;
+        @keyframes slide {
+            0% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(-100%);
+            }
+          }
+          
+          .infinite-slide {
+            display: flex;
+            width: calc(100% * 2);
+            animation: slide 4s linear infinite;
+          }    
+    }
+}
+.portfolio
+{
+    background-color: #0a0a0a;
+    box-shadow: 0 0 10px rgb(20, 20, 20), 0 0 20px rgb(8, 8, 8), 0 0 30px rgb(14, 13, 13), 0 0 20px rgb(15, 15, 15), 0 0 20px rgb(19, 18, 18);
+    .sec-2
+    {
+        background-color: rgb(19, 18, 18);
+        .react-tabs__tab {
+            outline: none;
+            background: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+          }
+          
+          .react-tabs__tab--selected {
+            background: linear-gradient(90deg, rgba(177,58,180,1) 0%, rgba(253,29,48,1) 50%);
+            color: white;
+          }
+          
+          .react-tabs__tab--selected:focus {
+            outline: none;
+          }
+          
+          .react-tabs__tab:focus {
+            outline: none;
+          }       
+    }
+    .cards1
+    {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        .parent
+        {
+            img
+            {
+                position: relative;
+            }
+        }
+        .child
+        {
+           position: absolute;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: rgb(0,0,0,0.7);
+        }
+    }
+    .cards1:hover 
+    {
+        .parent{
+            img 
+            {
+                scale: 1.3;
+                transition: 1s ease-in;
+                filter: blur(6px);
+            }
+        }
+    }
+    .exp
+    {
+        ul
+        {
+            list-style-type:square;
+            display: flex;
+        }
+    }
+}
+
 
 .Container-3
 {

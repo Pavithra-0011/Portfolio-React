@@ -1,10 +1,11 @@
 import React from 'react'
 import Button from '@mui/material/Button';
 
-function ButtonComponent({ButtonName, className, startIcon, endIcon, onClick}) {
+function ButtonComponent({ButtonName, className, startIcon, endIcon, onClick, href, download}) {
   return (
     <>
-    <Button className={className} onClick={onClick} startIcon={startIcon} endIcon={endIcon} style = {{fontFamily: "Mulish !important", color:"white !important"}}>{ButtonName}</Button>
+    <Button className={className} onClick={onClick} startIcon={startIcon} endIcon={endIcon} href={href}
+      download={download ? true : undefined} style ={{fontFamily: "Mulish !important", color:"white !important"}}>{ButtonName}</Button>
     </>
   )
 }

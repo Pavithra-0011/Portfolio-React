@@ -1,12 +1,11 @@
-import React from 'react'
 import { Input } from '@mui/base/Input';
-import './style.scss'
+import './styles.scss'
 import { ClassNames } from '@emotion/react';
 
-function InputComponent({placeholder,className,name,value, onChange}) {
+function TextArea({placeholder,className,name,value, onChange}) {
   return (
     <div>
-    <input
+    <textarea
     name = {name}
     value = {value}
     onChange={onChange}
@@ -18,4 +17,4 @@ function InputComponent({placeholder,className,name,value, onChange}) {
   )
 }
 
-export default InputComponent
+export default TextArea

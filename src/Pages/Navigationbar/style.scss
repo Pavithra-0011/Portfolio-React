@@ -12,7 +12,11 @@ nav
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
-
+     
+    .Icon
+    {
+        background-color: pink;
+    }
     li:hover
     {
             font-size: 20px;
