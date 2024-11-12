@@ -16,7 +16,6 @@ function App() {
       <Route path='/about' element={<About/>} />
        </Routes>
     </div>
-
       <div className='Error-Block'>
         <h3 className=' text-white'>Cannot be Viewed in Smaller Screens!</h3>
       </div>

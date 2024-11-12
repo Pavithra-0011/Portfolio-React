@@ -387,7 +387,8 @@ function About() {
               </ul>
              </div>
              <div className='exp text-white text-xl px-4 mt-12'>
-                Open to Developer Roles
+                Web Developer - Intern <br />
+                <span className='text-lg font-mono'>Lolex Technologies Nov(2024)</span>
                 <ul className=''>
                 <li className='font-serif mx-10'>Software Development</li>
                 <li className='font-serif'>Frontend Development</li>
@@ -529,8 +530,6 @@ function About() {
             </div>
          {/* </motion.div> */}
          </motion.div> 
-
-         
     </>
   )
 }
